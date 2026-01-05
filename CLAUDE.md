@@ -162,12 +162,15 @@ Single HTML file with embedded JavaScript:
 
 ## Ecosystem Integration
 
-Songs built with this guide can be integrated into the dj-overlay controller system.
+Songs built with this guide integrate with the **lofi-dj** controller system.
 
-See `mapping/` for interface specifications:
-- `song-interface.md` - How to structure songs as modules
-- `visual-interface.md` - How to create audio-reactive visuals
-- `dj-protocol.md` - How the controller discovers and crossfades songs
+```
+~/lofi-dj/          → Controller + Interface Contracts (canonical reference)
+~/lofi-*-song/      → Song implementations
+~/visual-*/         → Visual implementations
+```
+
+**See `~/lofi-dj/CLAUDE.md` for the canonical Song interface specification.**
 
 ### Quick Reference
 
@@ -178,3 +181,5 @@ To make your song controller-compatible:
 3. Implement `play()`, `pause()`, `stop()`, `getState()`
 4. Emit events for section changes: `on('sectionChange', cb)`
 5. Define sections in a `sections` object with filter/reverb/mute configs
+
+See `~/lofi-demo-song/` for a reference implementation.
